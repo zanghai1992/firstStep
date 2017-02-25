@@ -1,0 +1,37 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset=utf-8 />
+<title>相对定位对象会占据原有位置</title>
+<style type="text/css">
+<!--
+body {
+ margin:0px;
+ font-size: 9pt;
+ line-height:12pt;
+ margin-top: 150px;
+ margin-left: 150px;
+}
+.box1 {
+ background-color: #3CF;
+ height: 200px;
+ width: 200px;
+}
+.box2 {
+ background-color: #6C6;
+ height: 100px;
+ width: 100px;
+ position: relative;
+ float: left;
+ top:-120px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div class="box1">
+  <div class="box2"></div>
+[相对定位对象会占据原有位置]现在绿色小盒子是以子盒子形式存在蓝色大盒子中，并设定了浮动方式为左浮动，所以这些文字能环绕在它右边，当绿色小盒子用相对定位方法重定位到外边去了，文字还是不能流入它的区域，即左上角空白区域，那是因为绿色盒子还占用着它原来位置。</div>
+</body>
+</html>
