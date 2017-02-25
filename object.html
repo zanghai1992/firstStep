@@ -1,0 +1,79 @@
+<!doctype>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>Object</title>
+   <style>
+       body{margin:auto 0;}
+
+       h2{
+       	width: 100%;
+       	text-align: center;
+       	font-family: cursive ,monospace;
+       }
+        h2:hover{
+       	font-size: 200%;
+        background: #f5f1f1;
+        background: -webkit-gradient(linear,left top,left bottom,from(#f5f1f1), to(#ec6a6a));
+       	background: -moz-linear-gradient(top,#ffffff,#ec6a6a);
+       	background: linear-gradient(left top,#f5f1f1,#ec6a6a);
+       	filter: progid:DXImgeTransform.Microsoft.Gradient(startColorstr='#f5f1f1',endColorstr='#ec6a6a');/*背景颜色渐变*/
+
+       	border:5px dashed red;/* 
+       	              border:____  ____  _____ ;
+                      border-width
+                      border-style:dotted ,  dashed ,solid ,double ,groove ,ridge ,inset ,outset;
+                      border-color
+                       */
+       }
+
+       .Lf1{
+          width: 200px;
+          position: absolute;
+          top:300;
+       }
+       .Lf1:hover{
+       	  opacity: 0.5;/*不透明度*/
+       }
+       div{	position:relative;}
+       .centerText{
+       	width:700px;
+        position: absolute;
+        left:50%;
+        margin-left:-350px;
+       
+       }
+       .Lfpetal{
+         width: 80px;
+       	float: left;
+
+       }
+       .Lfpetal:hover{
+         width: 100px;/*尺寸变大*/
+
+         -moz-box-shadow:#dd3333 4px 8px 6px;
+         -webkit-box-shadow:#dd3333 4px 8px 6px;
+         box-shadow: #dd3333 4px 8px 6px;
+         filter: progid:DXImgeTransform.Microsoft.Shadow(color='#dd3333',Direction=135,Strength=6);/*阴影*/
+
+         border-radius: 10px;/*圆角边框*/
+
+        margin: 10px;
+       }
+      
+
+   </style>
+ </head>
+ <body>
+   <div >
+       <h2>ABOUT POSITION & MOUSE</h2>
+       <img src="orange.jpg"  class="Lf1" > <p class="centerText"><img src="petal.png" alt="petal"  class="Lfpetal"><span class="">position:absolute</span>(相对于父对象,将对象从文档中拖出，使用left,right,top,bottom等属性把元素放在任意地方，因为它可以层叠，改变层叠顺序用z-index：1/2/../122;)/fixed(相对于屏幕)/relative（relative是相对于自己来定位的).
+       <br clear="left"><!--<br clear="left/right/all">浮动到此为止*-->
+       例如：#demo{position:relative;top:-50px;},这时#demo会在相对于它原来的位置上移50px。）<br >
+       relative和absolute的另外一个很重要的区别就是当被定义成absolute的对象被移出了，那么他原来的位置也就不存在了，
+       如果被定义成relative的对象被移出了 他原来的位置还在，别的元素就不能替代这个位置.
+       </p>
+   </div>
+
+ </body>
+</html>
