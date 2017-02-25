@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style>
+       p{text-align:justify;} /*
+         类型选择器
+       text-align:left(默认值)/right/center/justify(两端文本对齐)/inherit;*/
+
+       p b{color:red}
+       /*后代选择器，可无限嵌套 p b ul li...*/
+
+       
+       #idSelector{
+       	   font-style: oblique;
+       	   }
+       	/*ID选择器  相同的ID在各类型元素中能且只能用一次
+       	font-style:normal/italic/oblique/inherit;*/
+       
+       .classSelector{
+           font-family:sans-serif,monospace,cursive,Arial,"Times New Roman","Microsoft YaHei";
+           /*字体名称由两个或多个词构成，必须将名称放在引号内*/
+            font-size: 234%;
+           /*px/pt/em/%*/
+           font-weight: bold;
+           /*bold/normal*/
+            text-decoration: underline;
+           /*text-decoration:underline/line-through/overline;*/
+           line-height:125%;/*行高（行间距）*/
+           word-spacing:120px;/*英文字母间距*/
+           letter-spacing: 10px;/*汉字/英文字母间距*/
+
+           text-indent: 80px;/*文本块第一行缩进*/
+         }
+         /*类选择器  如果页面中多个元素共享一个样式，可用相同的类*/
+       p,#idSelector,.classSelector{border-bottom:1px dotted orange;}
+       /*群组选择器，同时将规则应用于多个元素/类/或任何其他选择器（选择器间用，隔开）*/
+
+      div,span{border:1px solid green;}
+
+    /*伪类 使用除名称或特征外且不能从文档树中推论的内容分类*/
+      .classSelector:first-letter{
+      	      font-size:400%;
+      	      float:left;
+      	  }
+      a:hover{color:red;background:green;}
+      *:focus{border:2px dotted #sd2342;}
+
+     /*封装  运用:before ,:after*/
+     p:before{content: '\201c';}
+     p:after{content:'\201d';}
+    </style>
+ </head>
+ <body>
+   <p><b>UTF-8:</b><br>是在互联网上使用最广的一种<span id="idSelector">unicode</span>的实现方式，</p><div class="classSelector">这是为传输而设计的编码，并使编码无国界，这样就可以显示全世界上所有文化的字符了。The spaces between words will be increased.</div>
+    <span>span</span>和<div> div</div>都是容器类型，但，默认情况下，<div>div宽度无限，</div><span>span宽度取决于其包含的文本。</span>
+   <p></p>
+   <p>
+     伪类=使用除名称或特征外且不能从文档树中推论的内容 对元素进行分类，including ：first-line 
+，first-child , first-child ,first-letter 
+;.classSelector:first-letter{font-size:400%;float:left;}<br>
+     hover , link , active ,visited ,(主要用于 a )<a href="#">a:hover{color:red;background:green;}</a>a&gt;<br>
+     focus，它只在元素被用户通过键盘或鼠标选择，而获取焦点时应用。*:focus{border:2px dotted #sd2342;}???
+   </p>
+ 
+</body></html>
