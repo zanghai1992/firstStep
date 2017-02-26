@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>display:inline-block</title>
+    <style>
+
+       body,div{margin:0;padding:0;font-family: "Lato"}
+       .wrap{margin:0 auto;width: 890px;}
+       h1,h3,h4{text-align: center;font-family: "Microsoft JhengHei"}
+       h1:hover,h3:hover,h4:hover{
+            text-shadow: #888888 3px 3px 4px;
+        }
+        p:before{content:'\201c';}
+        p:after{content:'\201c';}/*封装，在一对p前后加一对双引号*/
+        p:active{font-size:200%;}/*按下鼠标与放开 之间，放大一倍*/
+        p{text-indent: 2em;}
+        .dropcap{font-size:500%;line-height: 0.8em;margin-right: 0.04em;margin-bottom:-0.15em;float: left;}/*首字母变大下沉*/
+        .star:before{content: '\2730';font-size:1.5em;}
+       a,ul,li{
+        	padding: 0;margin: 0;list-style-type:none;
+
+        }
+        li.ul1{
+        	display: inline-block;border:1px solid #000;
+        }/*inline-block基本效果，可以看到li元素可以横向排列，并且可以设置width属性*/
+        
+        ul.ul2{
+        	padding: 0;margin: 0;list-style-type: none;font-size: 50px;
+        }
+        li.ul2{
+        	display: inline-block;border:1px solid #000;width: 100px;text-align: center;font-size: 12px;
+        }
+
+        ul.ul3{
+        	padding: 0;margin: 0;list-style-type: none;font-size: 0px;
+        }
+        li.ul3{
+        	display: inline-block;border:1px solid #000;width: 100px;text-align: center;font-size: 12px;
+        }
+
+        a{text-decoration:none;
+          color:#333;}
+         .header ul{font-size: 0;text-align: center;}
+         .header li{display: inline-block;font-size:16px;width:80px;text-align:center;}
+         .button{display:inline-block;width: 150px;height: 45px;line-height:45px;background: red;text-align: center;}
+          
+         /*.button{display:table;width: 150px;height: 45px;background: red;text-align: center;}
+         .button span{vertical-align:middle;display: table-cell;}
+
+          CSS中的vertical-align属性只会对拥有valign特性的(X)HTML标签起作用，但是在CSS中还有一个display
+         属性能够模拟<table>，所以我们可以使用这个属性来让<div>模拟<table>就可以使用vertical-align了。注意，display:table和
+          display:table-cell的使用方法，前者必须设置在父元素上，后者必须设置在子元素上
+         */
+   .header,.footer{width:100%;background:#ccc;height:120px;text-align:center;line-height:120px;/*height=line-height时 垂直居中*/ }
+   .content{margin:0 auto;background:#bbb;width:1000px;font-size:0;}
+        .left,.content .center,.content .right{display: inline-block;font-size: 16px;height: 400px;}   
+        .content .left,.content .right{width:200px;}
+        .content .center{width: 600px;background-color: #aaa;}
+    </style>
+  </head>
+  <body>
+     <div class="wrap">
+       <h1>display:inline-block</h1>
+       <ul class="ul1">
+         <li class="ul1">首页</li>
+         <li class="ul1">关于</li>
+         <li class="ul1">热点</li>
+         <li class="ul1">联系我们</li>
+       </ul>
+       <p><span class="dropcap">该</span>代码在margin:0;时每一个 li 间有小空隙，<span class="star">是</span>继承了inline的空白符（我们编写代码时的空白/换行）在浏览器中空白符不会被忽略，但会被合并为一个。</p>
+        <br>
+        <ul class="ul1">
+         <li class="ul1">首页</li><li class="ul1">关于</li><li class="ul1">热点</li><li class="ul1">联系我们</li>
+       </ul>
+       <p>当代码空隙被去除时，浏览器中空白符消失。</p>
+       
+
+       <p><span class="star">div, </span>p, h1, form, ul 和 li是块元素的例子 <br> span, a, label, input, img, strong 和 em 是inline元素的例子。</p>
+       <br><br>
+         <span class="star">空</span>白符归根结底是字符，即可用font-size 控制间隙大小，
+       <ul class="ul2">
+         <li class="ul2">首页</li>
+         <li class="ul2">关于</li>
+         <li class="ul2">热点</li>
+         <li class="ul2">联系我们</li>
+       </ul>
+       font-size:50px;<br>
+     
+
+       <ul class="ul3">
+         <li class="ul3">首页</li>
+         <li class="ul3">关于</li>
+         <li class="ul3">热点</li>
+         <li class="ul3">联系我们</li>
+       </ul>
+       font-size:0px;
+
+       <h3>inline-block的应用</h3>
+       <p>考虑应用场景时，首先应考虑技术的特性和需求是否符合。inline-block的特点是：1 block的属性，可以设置width和height；2 inline的属性，元素保持行内排列的特性。综上，所有行内排列并且可以设置大小的场景都是我们可以考虑吧使用inline-block的应用场景。</p>
+       <h4>网页头部菜单</h4>
+       <p>网页头部的菜单就是典型的横向排列并且需要设置大小的应用，在inline-block之前，实现菜单基本都是用float属性来实现，float属性会造成高度塌陷，需要清除浮动等问题，使用inline-block实现就不需要在意这样的问题。</p>
+
+       <div class="header">
+            <ul>
+               <li>
+                   <a href="javascript:;" target="_blank" >服装城</a>
+               </li>
+               <li>
+                   <a href="javascript:;" target="_blank" >超市</a>
+               </li>
+               <li>
+                   <a href="javascript:;" target="_blank" >全球购</a>
+               </li>
+               <li>
+                   <a href="javascript:;" target="_blank" >闪购</a>
+               </li>
+               <li>
+                   <a href="javascript:;" target="_blank" >服装城</a>
+               </li>
+               <li>
+                   <a href="javascript:;" target="_blank" >服装城</a>
+               </li>
+            </ul>         
+       </div>
+       <h4>内联块元素</h4>
+       <p>除了菜单之外，一切需要行内排列并且可设置大小的需求就可以用inline-block来实现。
+例如使用a标签做按钮时，需要设置按钮的大小，我们就可以使用inline-block来实现。</p>
+   <div>
+      点击右边的按钮直接购买
+      <a href="javascript:;" class="button">购买</a>
+   </div>
+   <h4>布局</h4>
+   <p>inline-block也可以用于常见的布局，使用它就不需要去注意float属性布局带来的问题。
+举例说明，创建一个常见的3列布局。</p>
+</div><!--先结束一下，因为布局原因-->
+    <div class="lastPart">
+        <div class="header">
+           网页头部
+        </div>
+        <div class="content">
+            <div class="left">左侧</div>
+            <div class="center">中间</div>
+            <div class="right">右侧</div>
+        </div>
+    </div>
+    <div class="footer">网页底部</div>
+   
+  </body>
+</html>
