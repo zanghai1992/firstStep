@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+   <meta charset="utf-8">
+   <title>Show Pictures</title>
+   <style>
+       body{font-family: "Helvetica","Arial",serif;
+            color:#333;background-color: #ccc;
+            margin: 1em 10%;
+           }
+           h1{
+            color: #333;
+            background-color: transparent;
+           }
+           a{
+            color: #c60;
+            font-weight: bold;
+            text-decoration: none;
+
+
+           }
+           ul{padding: 0;  }
+           li{
+            float: left;
+            padding: 1em;
+            list-style: none;
+
+           }
+           img{
+            display: block;
+            clear:both;
+            
+           }
+           #placeholder{box-shadow:2px 3px 6px #606060;border-radius: 15px;}
+   </style>
+   <script type="text/javascript" src="showpic.js"></script>
+  </head>
+  <body>
+     <h1>Image Gallery</h1>
+     <ul>
+        <li><a href="images/pic1.jpg" title="a nice hat" onclick="showPic(this);return false;">hat</a></li>
+        <li><a href="images/pic2.jpg" title="good idea" onclick="showPic(this);return false;">shield</a></li>
+        <li><a href="images/pic3.jpg" title="cool life" onclick="showPic(this);return false;">discover</a></li>
+        <li><a href="images/pic4.jpg" title="elegent life style" onclick="showPic(this);return false;">yummy</a></li>
+        <li><a href="images/pic5.jpg" title="beautiful clothes" onclick="showPic(this);return false;">coat</a></li>
+     </ul>
+     <img src="images/pic1.jpg" alt="a nice hat" id="placeholder">
+     <P id="description" >Choose an image.</P>
+
+  </body>
+
+</html>
